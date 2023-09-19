@@ -1,6 +1,12 @@
 import React from "react";
-
+import { formatDistanceToNow, differenceInDays } from "date-fns";
+import { tr } from 'date-fns/locale'
 const Task = ({ taskObj, onComplete }) => {
+const tarih = new Date=(taskObj.deadline);  
+const kalanGun=formatDistanceToNow(tarih,{
+  addSuffix: true,
+  locale: tr,
+});
 
   return (
     <div className="task">
